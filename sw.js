@@ -1,4 +1,22 @@
-// console.log('Hello from the service worker.');
+
+const cacheName = "app-shell-resources";
+const assets = [
+  "/",
+  'index.html',
+  'js/app.js',
+  'js/common.js',
+  'js/materialize.min.js',
+  'css/styles.css',
+  'css/materialize.min.css',
+  'images/pkcontacts.png',
+  'https://fonts.googleapis.com/icon?family=Material+Icons'
+]
+
+caches.open(cacheName).then(cache => {
+
+  console.log("Opened cache");
+  cache.addAll(assets);
+});
 
 self.addEventListener('install', evt => {
   console.log('The service worker is being installed.', evt);
