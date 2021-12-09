@@ -3,6 +3,8 @@ const cacheName = "app-shell-resources";
 const assets = [
   "/",
   'index.html',
+  'pages/about.html',
+  'pages/contact.html',
   'js/app.js',
   'js/common.js',
   'js/materialize.min.js',
@@ -32,7 +34,8 @@ self.addEventListener('fetch', evt => {
   console.log('The service worker is serving the asset.', evt);
   // Checking if the cache contains the request. hmm very cool.
   evt.respondWith(
-    catches.match(evt.request).then(cacheRes => {
+    caches.match(evt.request).then(cacheRes => {
+      // console.log("Cache response", cacheRes);
       return cacheRes || evt.request;
     })
   );
