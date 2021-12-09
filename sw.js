@@ -14,10 +14,12 @@ const assets = [
 
 self.addEventListener('install', evt => {
   console.log('The service worker is being installed.', evt);
-  caches.open(cacheName).then(cache => {
-    console.log("Opened cache");
-    cache.addAll(assets);
-  });
+  evt.waitUntil(
+    caches.open(cacheName).then(cache => {
+      console.log("Opened cache");
+      cache.addAll(assets);
+    })
+  );
 });
 
 // activate event
