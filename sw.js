@@ -12,14 +12,12 @@ const assets = [
   'https://fonts.googleapis.com/icon?family=Material+Icons'
 ]
 
-caches.open(cacheName).then(cache => {
-
-  console.log("Opened cache");
-  cache.addAll(assets);
-});
-
 self.addEventListener('install', evt => {
   console.log('The service worker is being installed.', evt);
+  caches.open(cacheName).then(cache => {
+    console.log("Opened cache");
+    cache.addAll(assets);
+  });
 });
 
 // activate event
