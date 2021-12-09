@@ -11,7 +11,8 @@ const assets = [
   'css/styles.css',
   'css/materialize.min.css',
   'images/pkcontacts.png',
-  'https://fonts.googleapis.com/icon?family=Material+Icons'
+  'https://fonts.googleapis.com/icon?family=Material+Icons',
+  'https://fonts.gstatic.com/s/materialicons/v118/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2'
 ]
 
 self.addEventListener('install', evt => {
