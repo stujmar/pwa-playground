@@ -30,4 +30,10 @@ self.addEventListener('activate', evt => {
 // fetch event
 self.addEventListener('fetch', evt => {
   console.log('The service worker is serving the asset.', evt);
+  // Checking if the cache contains the request. hmm very cool.
+  evt.respondWith(
+    catches.match(evt.request).then(cacheRes => {
+      return cacheRes || evt.request;
+    })
+  );
 });
