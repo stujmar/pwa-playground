@@ -8,3 +8,8 @@ self.addEventListener('install', evt => {
 self.addEventListener('activate', evt => {
   console.log('The service worker is being activated.', evt);
 });
+
+// fetch event
+self.addEventListener('fetch', evt => {
+  console.log('The service worker is serving the asset.', evt);
+});
