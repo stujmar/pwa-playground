@@ -13,8 +13,18 @@ const assets = [
   'images/pkcontacts.png',
   'https://fonts.googleapis.com/icon?family=Material+Icons',
   'https://fonts.gstatic.com/s/materialicons/v118/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2'
-]
+];
 
+// Cache size limit function
+const limitCacheSize = (name, size) => {
+  caches.open(name).then(cache => {
+    cache.keys().then(keys => {
+      if (keys.length > size) {
+        cache.delete(keys[0]).then(limitCacheSize(name, size));
+      }
+    });
+  });
+};
 self.addEventListener('install', evt => {
   console.log('The service worker is being installed.', evt);
   evt.waitUntil(
