@@ -1,5 +1,5 @@
-
 const cacheName = "app-shell-resources-v2";
+const dynamicCacheName = 'dynamic-cache-v1';
 const assets = [
   "/",
   'index.html',
@@ -52,7 +52,13 @@ self.addEventListener('fetch', evt => {
   evt.respondWith(
     caches.match(evt.request).then(cacheRes => {
       // console.log("Cache response", cacheRes);
-      return cacheRes || evt.request;
+      return cacheRes || fetch(evt.request).then(fetchRes => {
+        return caches.open(dynamicCacheName).then(cache => {
+          cache.put(evt.request.url, fetchRes.clone());
+          limitCacheSize(dynamicCacheName, 15);
+          return fetchRes;
+        });
+      });
     })
   );
 });
