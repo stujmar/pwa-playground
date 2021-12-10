@@ -1,5 +1,5 @@
 
-const cacheName = "app-shell-resources-v1";
+const cacheName = "app-shell-resources-v2";
 const assets = [
   "/",
   'index.html',
@@ -28,11 +28,16 @@ self.addEventListener('install', evt => {
 // activate event
 self.addEventListener('activate', evt => {
   console.log('The service worker is being activated.', evt);
-});
+  evt.waitUntil(caches.keys().then(keys => {
+    console.log("Keys: ", keys);
+    return Promise.all(keys.filter(key => key !== cacheName).map(key => caches.delete(key)));
+  }));
+    
+  });
 
 // fetch event
 self.addEventListener('fetch', evt => {
-  console.log('The service worker is serving the asset.', evt);
+  // console.log('The service worker is serving the asset.', evt);
   // Checking if the cache contains the request. hmm very cool.
   evt.respondWith(
     caches.match(evt.request).then(cacheRes => {
