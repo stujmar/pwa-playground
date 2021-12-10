@@ -3,6 +3,7 @@ const dynamicCacheName = 'dynamic-cache-v1';
 const assets = [
   "/",
   'index.html',
+  'pages/default.html',
   'pages/about.html',
   'pages/contact.html',
   'js/app.js',
@@ -59,6 +60,10 @@ self.addEventListener('fetch', evt => {
           return fetchRes;
         });
       });
+    }).catch(() => {
+      if (evt.request.url.indexOf('.html') > -1) {
+        return caches.match('/pages/default.html');
+      }
     })
   );
 });
