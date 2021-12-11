@@ -1,25 +1,15 @@
 const http = require('http');
-const products = require('./data/products');
+const { getProducts } = require('./controllers/productController');
 
 console.log('Server is running...');
 
 // Very cool.
 // console.log(http);
 
-const oldServer = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.write('<h1>Hello World</h1>');
-
-  // The res.end() function is used to end the response process.
-  //  This method comes from the Node core.
-  res.end();
-})
-
 const server = http.createServer((req, res) => {
+  console.log('here');
   if (req.url === '/api/products' && req.method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify(products));
+    getProducts(req, res);
   } else {
     res.writeHead(404, { 'Content-Type': 'text/html' });
     res.end('<h1>Page not found</h1>');
