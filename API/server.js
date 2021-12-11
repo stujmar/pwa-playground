@@ -9,6 +9,10 @@ const server = http.createServer((req, res) => {
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/html');
   res.write('<h1>Hello World</h1>');
+
+  // The res.end() function is used to end the response process.
+  //  This method comes from the Node core.
+  res.end();
 })
 // This checks to see if there is a port number specified ...
 // If there is, it will use that port number.
