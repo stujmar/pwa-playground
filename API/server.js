@@ -5,7 +5,11 @@ console.log('Server is running...');
 // Very cool.
 // console.log(http);
 
-const server = http.createServer((req, res) => {})
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/html');
+  res.write('<h1>Hello World</h1>');
+})
 // This checks to see if there is a port number specified ...
 // If there is, it will use that port number.
 // If there isn't, it will use port 5000.
