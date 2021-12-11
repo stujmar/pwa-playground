@@ -1,0 +1,19 @@
+{
+  "name": "pwa-playground",
+  "version": "1.0.0",
+  "description": "Learning to Build a PWA.",
+  "main": "common.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stujmar/pwa-playground.git"
+  },
+  "author": "Stuart Marsh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stujmar/pwa-playground/issues"
+  },
+  "homepage": "https://github.com/stujmar/pwa-playground#readme"
+}
