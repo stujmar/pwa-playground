@@ -1,10 +1,15 @@
 const products = require('../data/products');
 const { v4: uuidv4 } = require('uuid');
 
+const { writeDataToFile } = require('../utils');
+
 function create(product) {
   return new Promise((resolve, reject) => {
-    const newProduct = { id: uuidv4, ...product };
+    const newProduct = { id: uuidv4(), ...product };
+    console.log("creating product", newProduct);
     products.push(newProduct);
+    writeDataToFile('./data/products.json', products)
+    resolve(newProduct);
   })
 };
 

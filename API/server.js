@@ -1,5 +1,5 @@
 const http = require('http');
-const { getProducts, getProductByI, createProduct } = require('./controllers/productController');
+const { getProducts, getProductById, createProduct } = require('./controllers/productController');
 
 console.log('Server is running...');
 
