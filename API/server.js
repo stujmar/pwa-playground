@@ -1,5 +1,5 @@
 const http = require('http');
-const { getProducts } = require('./controllers/productController');
+const { getProducts, getProductById } = require('./controllers/productController');
 
 console.log('Server is running...');
 
@@ -7,9 +7,12 @@ console.log('Server is running...');
 // console.log(http);
 
 const server = http.createServer((req, res) => {
-  console.log('here');
+  // console.log(res);
   if (req.url === '/api/products' && req.method === 'GET') {
     getProducts(req, res);
+  } else if (req.url.match(/\/api\/products\/[0-9]+/) && req.method === 'GET') {
+    const id = req.url.split('/')[3];
+    getProductById(req, res, id);
   } else {
     res.writeHead(404, { 'Content-Type': 'text/html' });
     res.end('<h1>Page not found</h1>');
