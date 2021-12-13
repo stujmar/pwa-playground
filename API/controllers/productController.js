@@ -31,14 +31,14 @@ async function getProductById(req, res, id) {
   }
 };
 
-async function deleteProduct(req, res, id) {
+async function removeProduct(req, res, id) {
   try {
     const product = await Product.findById(id);
     if (!product) {
       res.writeHead(404, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ message: 'Product not found' }));
     } else {
-    const deletedProduct = await Product.deleteProduct(id, product);
+    const deletedProduct = await Product.remove(id, product);
     res.writeHead(204, { 'Content-Type': 'application/json' });
     res.end(JSON.stringify(deletedProduct));
     }
@@ -97,5 +97,5 @@ module.exports = {
   getProductById,
   createProduct,
   updateProduct,
-  deleteProduct
+  removeProduct
 };
