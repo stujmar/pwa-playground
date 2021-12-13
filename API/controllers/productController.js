@@ -1,4 +1,5 @@
 const Product = require('../models/productModel');
+const { getPostData } = require('../utils')
 
 async function getProducts(req, res) {
   try {
@@ -33,22 +34,17 @@ async function getProductById(req, res, id) {
 // Create a new product
 async function createProduct(req, res) {
   try {
-    let body = '';
-    req.on('data', (chunk) => {
-      body += chunk.toString();
-    });
-    req.on('end', async () => {
-      const {title, description, price } = JSON.parse(body);
-      const product = {
-        title,
-        price,
-        description,
-      };
-      const newProduct = await Product.create(product);
+    const body = await getPostData(req);
+    const { title, price, description } = JSON.parse(body);
+    const product = {
+      title,
+      price,
+      description
+    };
+    const newProduct = await Product.create(product);
+    res.writeHead(201, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(newProduct));
 
-      res.writeHead(201, { 'Content-Type': 'application/json' });
-      return res.end(JSON.stringify(newProduct));
-    });
   } catch (error) {
     console.log(error);
   }
