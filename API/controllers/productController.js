@@ -50,9 +50,35 @@ async function createProduct(req, res) {
   }
 };
 
+async function updateProduct(req, res, id) {
+  try {
+
+    const product = await Product.findById(id);
+    if (!product) {
+      res.writeHead(404, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ message: 'Product not found' }));
+    } else {
+      const body = await getPostData(req);
+      const { title, price, description } = JSON.parse(body);
+      const productData = {
+        title: title || product.title,
+        price: price || product.price,
+        description: description || product.description
+      };
+      const updatedProduct = await Product.update(id, productData);
+      res.writeHead(204, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify(updatedProduct));
+    }
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 
 module.exports = {
   getProducts,
   getProductById,
-  createProduct
+  createProduct,
+  updateProduct
 };
