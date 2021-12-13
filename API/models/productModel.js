@@ -21,12 +21,11 @@ function update(id, product) {
   })
 };
 
-function remove(id, product) {
+function remove(id) {
   return new Promise((resolve, reject) => {
-    // const index = products.findIndex(product => product.id === id);
     const newProducts = products.filter(product => product.id !== id);
     writeDataToFile('./data/products.json', newProducts)
-    resolve(product);
+    resolve();
   })
 };
 

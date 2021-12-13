@@ -38,9 +38,9 @@ async function removeProduct(req, res, id) {
       res.writeHead(404, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ message: 'Product not found' }));
     } else {
-    const deletedProduct = await Product.remove(id, product);
-    res.writeHead(204, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify(deletedProduct));
+      await Product.remove(id)
+      res.writeHead(200, { 'Content-Type': 'application/json' })
+      res.end(JSON.stringify({ message: `Product ${id} removed` }))
     }
   } catch (error) {
     console.log(error);
