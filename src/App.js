@@ -7,7 +7,7 @@ function App() {
         <div className="w-full border-b-8 border-rose-400"></div>
         <div className="w-full border-b-8 border-stone-300"></div>
         <div className="w-full border-b-8 border-lime-300"></div>
-        <div className="bg-lime-100">Hello World</div>
+        <div className="bg-lime-100 josefin pt-1 text-lime-900">Hello World</div>
         <div className="w-full border-b-8 border-lime-300"></div>
         <div className="w-full border-b-8 border-stone-300"></div>
         <div className="w-full border-b-8 border-rose-400"></div>
