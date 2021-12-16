@@ -1,4 +1,5 @@
 import './App.css';
+import Form from './components/Form';
 import HelloBar from './components/HelloBar';
 import HelloBeam from './components/HelloBeam';
 import NavBar from './components/NavBar';
@@ -9,7 +10,10 @@ function App() {
       <HelloBar />
       <div className="flex justify-around items-start">
         <HelloBeam />
-        <NavBar />
+        <div>
+          <NavBar />
+          <Form />
+        </div>
         <HelloBeam />
       </div>
     </div>
