@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Form = () => {
+  const [error, setError] = useState(false);
+
   return (
   <div class="w-full max-w-xs mt-12">
     <form class="bg-white shadow-md shadow-sky-400 rounded-lg px-8 pt-6 pb-8 mb-4">
@@ -15,7 +17,9 @@ const Form = () => {
           Password
         </label>
         <input class="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="******************" />
-        <p class="text-red-500 text-xs italic">Please choose a password.</p>
+        <div className="h-4">
+          {error ? <p class="text-red-500 text-xs italic">Please choose a password.</p> : null}
+        </div>
       </div>
       <div class="flex items-center justify-between">
         <button class="bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
