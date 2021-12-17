@@ -5,6 +5,18 @@ const Form = () => {
     name: '',
     password: '',
   });
+  const [validation , setValidation] = useState({
+    name: {
+      isValid: true,
+      pattern : /^[a-zA-Z]{3,}$/,
+      message : 'Name must be at least 3 characters long and contain only letters',
+    },
+    password: {
+      isValid : true,
+      pattern : /^[a-zA-Z0-9]{3,}$/,
+      message : 'Password must be at least 3 characters long and contain only letters and numbers',
+    },
+  });
   const [error, setError] = useState(false);
 
   const handleChange = (e) => {
