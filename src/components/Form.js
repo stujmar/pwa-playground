@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 const Form = () => {
   const [form , setForm] = useState({
-    name: '',
+    username: '',
     email: '',
     password: '',
   });
   const [validation , setValidation] = useState({
-    name: {
+    username: {
       isValid: true,
       pattern : /^[a-zA-Z]{3,}$/,
       message : 'Name must be at least 3 characters long and contain only letters',
@@ -28,7 +28,9 @@ const Form = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     if (!validation[name].pattern.test(value)) {
-      console.log(value, "is not valid");
+      setValidation({...validation, [name]: {...validation[name], isValid: false}});
+    } else {
+      setValidation({...validation, [name]: {...validation[name], isValid: true}});
     }
     setForm({
       ...form,
@@ -61,10 +63,10 @@ const Form = () => {
           Username
         </label>
         <input
-          name="name"
+          name="username"
           onChange={(e) => handleChange(e)}
-          value={form.name}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          value={form.username}
+          className={`shadow appearance-none ${validation["username"].isValid ? "" : "border border-red-500"} rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
           id="username"
           type="text"
           placeholder="Username" />
@@ -77,7 +79,7 @@ const Form = () => {
           name="email"
           onChange={(e) => handleChange(e)}
           value={form.email}
-          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          className={`shadow appearance-none ${validation["email"].isValid ? "" : "border border-red-500"} rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
           id="email"
           type="text"
           placeholder="email" />
@@ -90,7 +92,7 @@ const Form = () => {
           name="password"
           onChange={(e) => handleChange(e)}
           value={form.password}
-          className="shadow appearance-none border border-red-500 rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+          className={`shadow appearance-none ${validation["password"].isValid ? "" : "border border-red-500"} rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline`}
           id="password"
           type="password"
           placeholder="******************" />
