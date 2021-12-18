@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 const Form = () => {
   const [form , setForm] = useState({
     name: '',
+    email: '',
     password: '',
   });
   const [validation , setValidation] = useState({
@@ -16,10 +17,19 @@ const Form = () => {
       pattern : /^[a-zA-Z0-9]{3,}$/,
       message : 'Password must be at least 3 characters long and contain only letters and numbers',
     },
-  });
+    email: {
+      isValid : true,
+      pattern : /^[a-zA-Z0-9]{3,}@[a-zA-Z0-9]{3,}.[a-zA-Z0-9]{3,}$/,
+      message : 'Email must be at least 3 characters long and contain only letters and numbers'
+  }
+});
   const [error, setError] = useState(false);
 
   const handleChange = (e) => {
+    const { name, value } = e.target;
+    if (!validation[name].pattern.test(value)) {
+      console.log(value, "is not valid");
+    }
     setForm({
       ...form,
       [e.target.name]: e.target.value,
@@ -58,6 +68,19 @@ const Form = () => {
           id="username"
           type="text"
           placeholder="Username" />
+      </div>
+      <div className="mb-4">
+        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+          Email
+        </label>
+        <input
+          name="email"
+          onChange={(e) => handleChange(e)}
+          value={form.email}
+          className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="email"
+          type="text"
+          placeholder="email" />
       </div>
       <div className="mb-6">
         <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
