@@ -9,7 +9,7 @@ import Login from './components/pages/Login';
 
 function App() {
   return (
-    <div>
+    <div className="overflow-hidden">
       <NavBar />
       Welcome to our App.
       <Routes>
