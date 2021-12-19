@@ -10,7 +10,7 @@ function App() {
       <HelloBar />
       <div className="flex justify-around items-start">
         <HelloBeam />
-        <div>
+        <div className="flex flex-col items-center">
           <NavBar />
           <Form />
         </div>
