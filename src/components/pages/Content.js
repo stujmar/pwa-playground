@@ -1,11 +1,11 @@
 import React from 'react';
-import Form from './components/Form';
-import HelloBar from './components/HelloBar';
-import HelloBeam from './components/HelloBeam';
-import NavBar from './components/NavBar';
+import Form from '../Form';
+import HelloBar from '../HelloBar';
+import HelloBeam from '../HelloBeam';
+import NavBar from '../NavBar';
 
 
-const Landing = () => {
+const Content = () => {
   return (
     <div className="pt-12 bg-sky-50">
       <HelloBar />
@@ -21,4 +21,4 @@ const Landing = () => {
   )
 }
 
-export default Landing;
+export default Content;
