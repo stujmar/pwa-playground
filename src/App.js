@@ -12,7 +12,9 @@ function App() {
     <div className="overflow-hidden">
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home />} >
+          
+        </Route>
         <Route path="/content" element={<Content />} />
         <Route path="/login" element={<Login />} />
       </Routes>
