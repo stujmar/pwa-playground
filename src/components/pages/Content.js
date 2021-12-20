@@ -7,7 +7,7 @@ import HelloBeam from '../HelloBeam';
 const Content = () => {
   return (
     <div className="pt-12">
-      <HelloBar />
+      <HelloBar message="Content" />
       <div className="flex justify-around items-start">
         {/* <HelloBeam /> */}
         <div className="flex flex-col items-center">
