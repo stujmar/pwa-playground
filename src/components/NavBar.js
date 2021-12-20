@@ -14,7 +14,6 @@ const NavBar = () => {
       <Link 
         to="/content"
         className="bg-sky-500 shadow-md shadow-sky-500/50 josefin px-4 pt-0.5
-        
         border-t-2 border-t-sky-400/60
         border-b-2 border-b-sky-600/40 
         text-sky-50 font-bold hover:bg-sky-600"
