@@ -6,14 +6,14 @@ import HelloBeam from '../HelloBeam';
 
 const Content = () => {
   return (
-    <div className="pt-12 bg-sky-50">
+    <div className="pt-12">
       <HelloBar />
       <div className="flex justify-around items-start">
-        <HelloBeam />
+        {/* <HelloBeam /> */}
         <div className="flex flex-col items-center">
           <Form />
         </div>
-        <HelloBeam />
+        {/* <HelloBeam /> */}
       </div>
     </div>
   )
