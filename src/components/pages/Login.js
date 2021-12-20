@@ -1,9 +1,14 @@
 import React from 'react';
+import HelloBar from '../HelloBar';
+import Form from '../Form';
 
 const Login = () => {
   return (
-    <div>
-      Welcome to Login.
+    <div className="pt-12">
+      <HelloBar message="Login" />
+      <div className="flex flex-col items-center">
+          <Form />
+        </div>
     </div>
   )
 }

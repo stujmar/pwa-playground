@@ -1,7 +1,5 @@
 import React from 'react';
-import Form from '../Form';
 import HelloBar from '../HelloBar';
-import HelloBeam from '../HelloBeam';
 
 
 const Content = () => {
@@ -10,9 +8,6 @@ const Content = () => {
       <HelloBar message="Content" />
       <div className="flex justify-around items-start">
         {/* <HelloBeam /> */}
-        <div className="flex flex-col items-center">
-          <Form />
-        </div>
         {/* <HelloBeam /> */}
       </div>
     </div>
