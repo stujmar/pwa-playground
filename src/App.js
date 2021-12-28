@@ -18,7 +18,8 @@ function App() {
           <Route path="one" element={<HomeOne />} />
           <Route path="two" element={<HomeTwo />} />
         </Route>
-        <Route path="/team">
+        <Route path="/team" element={<Teams />}>
+          
           <Route path=":teamId" element={<Team />} />
           <Route path="new" element={<NewTeamForm />} />
         </Route>
