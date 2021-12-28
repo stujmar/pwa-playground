@@ -9,6 +9,10 @@ import Login from './components/pages/Login';
 import HomeOne from './components/pages/HomeOne';
 import HomeTwo from './components/pages/HomeTwo';
 
+import Team from './components/teams/Team';
+import Teams from './components/teams/Teams';
+import NewTeamForm from './components/teams/NewTeamForm';
+
 function App() {
   return (
     <div className="overflow-hidden">
