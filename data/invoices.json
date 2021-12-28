@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Blorb Store",
+    "description": "An entire store full of blorbs",
+    "price": 10.00
+  },
+  {
+    "id": 2,
+    "name": "Cork",
+    "description": "An entire roll of cork",
+    "price": 15.00
+  },
+  {
+    "id": 3,
+    "name": "Duct",
+    "description": "One Duct",
+    "price": 20.00
+  }
+]
