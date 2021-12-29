@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 import './App.css';
 
@@ -17,7 +17,11 @@ import NewTeamForm from './components/teams/NewTeamForm';
 function App() {
 
   const [invoices, setInvoices ] = useState([]);
-  console.log(invoiceData);
+
+  useEffect(() => {
+    setInvoices(invoiceData);
+  },[])
+
   return (
     <div className="overflow-hidden">
       <NavBar />
@@ -27,7 +31,7 @@ function App() {
             <Route path="one" element={<HomeOne />} />
             <Route path="two" element={<HomeTwo />} />
           </Route>
-          <Route path="/team" element={<Teams />}>
+          <Route path="/team" element={<Teams data={invoices} />}>
             
             <Route path=":teamId" element={<Team />} />
             <Route path="new" element={<NewTeamForm />} />
