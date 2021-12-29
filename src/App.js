@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from "react-router-dom";
 import './App.css';
 
@@ -9,11 +9,15 @@ import Login from './components/pages/Login';
 import HomeOne from './components/pages/HomeOne';
 import HomeTwo from './components/pages/HomeTwo';
 
+import invoiceData from './data/invoices.json'
 import Team from './components/teams/Team';
 import Teams from './components/teams/Teams';
 import NewTeamForm from './components/teams/NewTeamForm';
 
 function App() {
+
+  const [invoices, setInvoices ] = useState([]);
+  console.log(invoiceData);
   return (
     <div className="overflow-hidden">
       <NavBar />
