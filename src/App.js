@@ -32,9 +32,9 @@ function App() {
             <Route path="one" element={<HomeOne />} />
             <Route path="two" element={<HomeTwo />} />
           </Route>
+          <Route path="/teams/:id" element={<Team data={invoices}/>} />
           <Route path="/teams" element={<Teams data={invoices} />}>
             
-            <Route path="/teams/:teamId" element={<Team />} />
             <Route path="new" element={<NewTeamForm />} />
           </Route>
           <Route path="/content" element={<Content />} />

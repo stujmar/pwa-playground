@@ -17,6 +17,7 @@ const Teams = ({data}) => {
       return <TeamCard key={item.id} data={item} onClick={handleTeamClick} />
     }));
   },[data]);
+
   return (
     <div>
       <div className="w-full text-center">
