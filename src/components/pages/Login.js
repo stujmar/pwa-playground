@@ -4,7 +4,7 @@ import Form from '../Form';
 
 const Login = () => {
   return (
-    <div className="pt-12">
+    <div>
       <HelloBar message="Login" />
       <div className="flex flex-col items-center">
           <Form />

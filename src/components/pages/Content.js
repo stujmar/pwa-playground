@@ -4,7 +4,7 @@ import HelloBar from '../HelloBar';
 
 const Content = () => {
   return (
-    <div className="pt-12">
+    <div>
       <HelloBar message="Content" />
       <div className="flex justify-around items-start">
         {/* <HelloBeam /> */}

@@ -4,7 +4,7 @@ import { Outlet, Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className="pt-12">
+    <div>
       <HelloBar message="Welcome Home" />
       <div  className="flex justify-center gap-4 mt-4">
         <Link 

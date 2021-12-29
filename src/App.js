@@ -21,19 +21,21 @@ function App() {
   return (
     <div className="overflow-hidden">
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} >
-          <Route path="one" element={<HomeOne />} />
-          <Route path="two" element={<HomeTwo />} />
-        </Route>
-        <Route path="/team" element={<Teams />}>
-          
-          <Route path=":teamId" element={<Team />} />
-          <Route path="new" element={<NewTeamForm />} />
-        </Route>
-        <Route path="/content" element={<Content />} />
-        <Route path="/login" element={<Login />} />
-      </Routes>
+      <div className="pt-4 md:pt-12">
+        <Routes>
+          <Route path="/" element={<Home />} >
+            <Route path="one" element={<HomeOne />} />
+            <Route path="two" element={<HomeTwo />} />
+          </Route>
+          <Route path="/team" element={<Teams />}>
+            
+            <Route path=":teamId" element={<Team />} />
+            <Route path="new" element={<NewTeamForm />} />
+          </Route>
+          <Route path="/content" element={<Content />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </div>
     </div>
   );
 }
