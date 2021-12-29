@@ -15,7 +15,10 @@ const Teams = ({data}) => {
     }));
   },[data]);
   return (
-    <div>Teams
+    <div>
+      <div className="w-full text-center">
+        Teams
+      </div>
       <p>{invoices}</p>
     </div>
   )
