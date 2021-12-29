@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Team = () => {
+const Team = ({data}) => {
   return (
-    <div>Team</div>
+    <div className="m-2 border rounded-sm">Item: {data.name}</div>
   )
 }
 
