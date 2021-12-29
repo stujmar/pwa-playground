@@ -13,6 +13,7 @@ import invoiceData from './data/invoices.json'
 import Team from './components/teams/Team';
 import Teams from './components/teams/Teams';
 import NewTeamForm from './components/teams/NewTeamForm';
+import NotFound from './components/teams/NotFound';
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
           </Route>
           <Route path="/content" element={<Content />} />
           <Route path="/login" element={<Login />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </div>
