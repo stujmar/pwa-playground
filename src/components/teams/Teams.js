@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import TeamCard from './TeamCard';
 
 const Teams = ({data}) => {
-
+  const navigate = useNavigate();
   const [invoices, setInvoices] = useState([]);
 
   const handleTeamClick = (id) => {
     console.log(id);
+    navigate(`/teams/${id}`);
   }
 
   useEffect(() => {

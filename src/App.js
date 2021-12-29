@@ -34,7 +34,7 @@ function App() {
           </Route>
           <Route path="/teams" element={<Teams data={invoices} />}>
             
-            <Route path=":teamId" element={<Team />} />
+            <Route path="/teams/:teamId" element={<Team />} />
             <Route path="new" element={<NewTeamForm />} />
           </Route>
           <Route path="/content" element={<Content />} />
