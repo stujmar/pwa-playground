@@ -19,7 +19,7 @@ const Teams = ({data}) => {
   },[data]);
 
   return (
-    <div>
+    <div className="w-max mx-auto">
       <div className="w-full text-center">
         Teams
       </div>

@@ -9,7 +9,10 @@ const TeamCard = ({data, onClick}) => {
     <button
       onClick={() => handleClick()}
     >
-    <div className="m-2 hover:bg-gray-100 border rounded-sm p-2 shadow-sm">Item: {data.name}</div>
+    <div className="m-2 hover:bg-gray-100 border rounded-sm p-2 shadow-sm">
+      <span className="text-gray-500 mr-2">Item:</span>
+      {data.name}
+    </div>
     </button>
   )
 }
