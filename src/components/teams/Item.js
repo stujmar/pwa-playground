@@ -10,10 +10,11 @@ const Item = ({data}) => {
   })[0];
 
   useEffect(() => {
+    console.log("rerendering Item");
     setInvoice(data.filter((item) => {
      return parseInt(item.id) === parseInt(params.id);
     })[0]);
-  },[])
+  },[data, params])
 
 
   return (

@@ -6,7 +6,8 @@ import ItemCard from './ItemCard';
 const Items = ({data}) => {
   const navigate = useNavigate();
   const params = useParams();
-  console.log(params, window.location.href.split("/").slice(-1));
+  let isNewForm = window.location.href.split("/").slice(-1) === "new";
+  console.log(isNewForm, window.location.href.split("/").slice(-1));
   const [invoices, setInvoices] = useState([]);
 
   const handleItemClick = (id) => {
@@ -17,14 +18,17 @@ const Items = ({data}) => {
     setInvoices(data.map((item) => {
       return <ItemCard key={item.id} data={item} onClick={handleItemClick} />
     }));
-  },[data]);
+  },[data, params]);
 
   return (
     <div className="w-max mx-auto">
+     <div>
       <div className="w-full text-center">
         Items
       </div>
       <p>{invoices}</p>
+      </div>
+      
       <Link to="/items/new">New Item</Link>
       <Outlet />
     </div>
