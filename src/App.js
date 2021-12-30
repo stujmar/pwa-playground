@@ -33,9 +33,9 @@ function App() {
             <Route path="two" element={<HomeTwo />} />
           </Route>
           <Route path="/items/:id" element={<Item data={invoices}/>} />
+          <Route path="items/new" element={<NewItemForm />} />
           <Route path="/items" element={<Items data={invoices} />}>
             
-            <Route path="new" element={<NewItemForm />} />
           </Route>
           <Route path="/content" element={<Content />} />
           <Route path="/login" element={<Login />} />
