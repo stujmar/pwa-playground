@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TeamCard = ({data, onClick}) => {
+const ItemCard = ({data, onClick}) => {
 
   const handleClick = () => {
     onClick(data.id);
@@ -17,4 +17,4 @@ const TeamCard = ({data, onClick}) => {
   )
 }
 
-export default TeamCard;
+export default ItemCard;

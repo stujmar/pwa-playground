@@ -12,12 +12,12 @@ const NavBar = () => {
         text-rose-50 font-bold hover:bg-rose-600"
       >HOME</Link>
       <Link 
-        to="/teams"
+        to="/items"
         className="bg-sky-500 md:shadow-md shadow-sky-500/50 josefin px-4 pt-0.5
         border-t-2 border-t-sky-400/60
         border-b-2 border-b-sky-600/40 
         text-sky-50 font-bold hover:bg-sky-600"
-      >TEAMS</Link>
+      >ITEMS</Link>
       <Link 
         to="/login"
         className="bg-lime-500 md:shadow-md shadow-lime-500/50 josefin px-4 pt-0.5 

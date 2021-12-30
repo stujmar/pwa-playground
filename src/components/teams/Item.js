@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
-const Team = ({data}) => {
+const Item = ({data}) => {
 
   const [invoice, setInvoice] = useState({});
   let params = useParams();
@@ -23,15 +23,15 @@ const Team = ({data}) => {
 
   return (
     <div>
-      <Link to="/teams">Back to Teams</Link>
     <div className="m-2 border rounded-sm flex flex-col">
       <div>Item: {params.id}</div>
       <div>{invoice.name}</div>
       <div>{invoice.description}</div>
       
       </div>
+      <Link className="block w-max mx-auto text-gray-500 hover:text-gray-600" to="/items">Back to Items</Link>
     </div>
   )
 }
 
-export default Team;
+export default Item;

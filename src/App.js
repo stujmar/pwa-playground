@@ -10,9 +10,9 @@ import HomeOne from './components/pages/HomeOne';
 import HomeTwo from './components/pages/HomeTwo';
 
 import invoiceData from './data/invoices.json'
-import Team from './components/teams/Team';
-import Teams from './components/teams/Teams';
-import NewTeamForm from './components/teams/NewTeamForm';
+import Item from './components/teams/Item';
+import Items from './components/teams/Items';
+import NewItemForm from './components/teams/NewItemForm';
 import NotFound from './components/teams/NotFound';
 
 function App() {
@@ -32,10 +32,10 @@ function App() {
             <Route path="one" element={<HomeOne />} />
             <Route path="two" element={<HomeTwo />} />
           </Route>
-          <Route path="/teams/:id" element={<Team data={invoices}/>} />
-          <Route path="/teams" element={<Teams data={invoices} />}>
+          <Route path="/items/:id" element={<Item data={invoices}/>} />
+          <Route path="/items" element={<Items data={invoices} />}>
             
-            <Route path="new" element={<NewTeamForm />} />
+            <Route path="new" element={<NewItemForm />} />
           </Route>
           <Route path="/content" element={<Content />} />
           <Route path="/login" element={<Login />} />

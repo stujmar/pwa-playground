@@ -1,31 +1,31 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import TeamCard from './TeamCard';
+import ItemCard from './ItemCard';
 
-const Teams = ({data}) => {
+const Items = ({data}) => {
   const navigate = useNavigate();
   const [invoices, setInvoices] = useState([]);
 
-  const handleTeamClick = (id) => {
+  const handleItemClick = (id) => {
     console.log(id);
-    navigate(`/teams/${id}`);
+    navigate(`/items/${id}`);
   }
 
   useEffect(() => {
     setInvoices(data.map((item) => {
-      return <TeamCard key={item.id} data={item} onClick={handleTeamClick} />
+      return <ItemCard key={item.id} data={item} onClick={handleItemClick} />
     }));
   },[data]);
 
   return (
     <div className="w-max mx-auto">
       <div className="w-full text-center">
-        Teams
+        Items
       </div>
       <p>{invoices}</p>
     </div>
   )
 }
 
-export default Teams;
+export default Items;
