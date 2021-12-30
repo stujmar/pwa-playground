@@ -25,14 +25,21 @@ const Items = ({data}) => {
       {isNewForm ? null :
      <div>
       <div className="w-full text-center">
-        Items
+      <Link 
+      className="
+      px-2 py-1 mb-4 text-white block w-max mx-auto
+      border-t-2 border-t-lime-300/60 border-b-2 border-b-lime-600/40
+      shadow-md shadow-lime-500/50
+      uppercase josefin font-bold
+      bg-lime-500 hover:bg-lime-600 text-sm"
+      to="/items/new">New Item</Link>
       </div>
-      <p>{invoices}</p>
+      <p className="grid grid-cols-2 md:grid-cols-3">{invoices}
+      </p>
       </div>
-    }
       
-      <Link to="/items/new">New Item</Link>
-      <Outlet />
+    }
+    <Outlet />
     </div>
   )
 }

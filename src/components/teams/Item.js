@@ -19,13 +19,12 @@ const Item = ({data}) => {
 
   return (
     <div>
-    <div className="m-2 border rounded-sm flex flex-col">
+    <div className="m-2 p-2 border rounded-sm flex flex-col">
       <div>Item: {params.id}</div>
       <div>{invoice.name}</div>
       <div>{invoice.description}</div>
       
       </div>
-      <Link className="block w-max mx-auto text-gray-500 hover:text-gray-600" to="/items">Back to Items</Link>
     </div>
   )
 }
