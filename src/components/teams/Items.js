@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { Link, Outlet, useNavigate, useParams } from 'react-router-dom';
 
 import ItemCard from './ItemCard';
 
 const Items = ({data}) => {
   const navigate = useNavigate();
+  const params = useParams();
+  console.log(params, window.location.href.split("/").slice(-1));
   const [invoices, setInvoices] = useState([]);
 
   const handleItemClick = (id) => {
-    console.log(id);
     navigate(`/items/${id}`);
   }
 

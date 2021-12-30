@@ -39,9 +39,6 @@ const Form = () => {
   };
 
   const handleSubmit = (e) => {
-    console.log(e);
-    console.log(e.target.elements.username.value);
-    console.log(e.target.elements.password.value);
     e.preventDefault();
     const isValid = Object.keys(validation).every((key) => {
       return validation[key].isValid;

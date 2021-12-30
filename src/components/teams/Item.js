@@ -6,16 +6,11 @@ const Item = ({data}) => {
   const [invoice, setInvoice] = useState({});
   let params = useParams();
   let test = data.filter((item) => {
-    console.log(parseInt(item.id) === parseInt(params.id));
    return parseInt(item.id) === parseInt(params.id);
   })[0];
 
-  console.log("test", test);
   useEffect(() => {
-    console.log(data, params.id);
-    
     setInvoice(data.filter((item) => {
-      console.log(parseInt(item.id) === parseInt(params.id));
      return parseInt(item.id) === parseInt(params.id);
     })[0]);
   },[])
