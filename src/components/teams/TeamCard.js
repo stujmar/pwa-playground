@@ -3,7 +3,6 @@ import React from 'react';
 const TeamCard = ({data, onClick}) => {
 
   const handleClick = () => {
-    console.log(data.id);
     onClick(data.id);
   }
   return (
