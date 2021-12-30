@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 const Team = ({data}) => {
 
@@ -22,12 +22,15 @@ const Team = ({data}) => {
 
 
   return (
+    <div>
+      <Link to="/teams">Back to Teams</Link>
     <div className="m-2 border rounded-sm flex flex-col">
       <div>Item: {params.id}</div>
       <div>{invoice.name}</div>
       <div>{invoice.description}</div>
       
       </div>
+    </div>
   )
 }
 
