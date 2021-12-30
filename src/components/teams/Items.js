@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 
 import ItemCard from './ItemCard';
 
@@ -25,6 +25,7 @@ const Items = ({data}) => {
       </div>
       <p>{invoices}</p>
       <Link to="/items/new">New Item</Link>
+      <Outlet />
     </div>
   )
 }
