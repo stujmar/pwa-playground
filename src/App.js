@@ -14,6 +14,7 @@ import Item from './components/teams/Item';
 import Items from './components/teams/Items';
 import NewItemForm from './components/teams/NewItemForm';
 import NotFound from './components/teams/NotFound';
+import ItemsIndex from './components/teams/ItemsIndex';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
             <Route path="two" element={<HomeTwo />} />
           </Route>
           <Route path="/items" element={<Items data={invoices} />}>
+            <Route index element={<ItemsIndex />} />
             <Route path="/items/new" element={<NewItemForm />} />
             <Route path="/items/:id" element={<Item data={invoices}/>} />
           </Route>
