@@ -6,7 +6,7 @@ import ItemCard from './ItemCard';
 const Items = ({data}) => {
   const navigate = useNavigate();
   const params = useParams();
-  let isNewForm = window.location.href.split("/").slice(-1) === "new";
+  let isNewForm = window.location.href.split("/").slice(-1)[0] === "new";
   console.log(isNewForm, window.location.href.split("/").slice(-1));
   const [invoices, setInvoices] = useState([]);
 
@@ -22,12 +22,14 @@ const Items = ({data}) => {
 
   return (
     <div className="w-max mx-auto">
+      {isNewForm ? null :
      <div>
       <div className="w-full text-center">
         Items
       </div>
       <p>{invoices}</p>
       </div>
+    }
       
       <Link to="/items/new">New Item</Link>
       <Outlet />
