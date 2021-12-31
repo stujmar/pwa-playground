@@ -33,8 +33,8 @@ function App() {
             <Route path="one" element={<HomeOne />} />
             <Route path="two" element={<HomeTwo />} />
           </Route>
-          <Route path="/items" element={<ItemsLayout data={invoices} />}>
-            <Route index element={<ItemsIndex />} />
+          <Route path="/items" element={<ItemsLayout />}>
+            <Route index element={<ItemsIndex  data={invoices}/>} />
             <Route path="/items/new" element={<NewItemForm />} />
             <Route path="/items/:id" element={<Item data={invoices}/>} />
           </Route>
