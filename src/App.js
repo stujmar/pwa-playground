@@ -10,11 +10,11 @@ import HomeOne from './components/pages/HomeOne';
 import HomeTwo from './components/pages/HomeTwo';
 
 import invoiceData from './data/invoices.json'
-import Item from './components/teams/Item';
-import Items from './components/teams/Items';
-import NewItemForm from './components/teams/NewItemForm';
-import NotFound from './components/teams/NotFound';
-import ItemsIndex from './components/teams/ItemsIndex';
+import Item from './components/items/Item';
+import Items from './components/items/Items';
+import NewItemForm from './components/items/NewItemForm';
+import NotFound from './components/items/NotFound';
+import ItemsIndex from './components/items/ItemsIndex';
 
 function App() {
 
