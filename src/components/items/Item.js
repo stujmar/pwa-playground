@@ -23,8 +23,8 @@ const Item = ({data}) => {
       <div>Item: {params.id}</div>
       <div>{invoice.name}</div>
       <div>{invoice.description}</div>
-      
       </div>
+      <Link className="block w-max mx-auto text-gray-500 hover:text-gray-600" to="/items">Back to Items</Link>
     </div>
   )
 }
