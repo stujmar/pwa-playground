@@ -3,7 +3,7 @@ import { Link, Outlet, useNavigate, useParams } from 'react-router-dom';
 
 import ItemCard from './ItemCard';
 
-const Items = ({data}) => {
+const ItemsLayout = ({data}) => {
   const navigate = useNavigate();
   const params = useParams();
   let isNewForm = window.location.href.split("/").slice(-1)[0] === "new";
@@ -44,4 +44,4 @@ const Items = ({data}) => {
   )
 }
 
-export default Items;
+export default ItemsLayout;

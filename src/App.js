@@ -11,7 +11,7 @@ import HomeTwo from './components/pages/HomeTwo';
 
 import invoiceData from './data/invoices.json'
 import Item from './components/items/Item';
-import Items from './components/items/Items';
+import ItemsLayout from './components/items/ItemsLayout';
 import NewItemForm from './components/items/NewItemForm';
 import NotFound from './components/items/NotFound';
 import ItemsIndex from './components/items/ItemsIndex';
@@ -33,7 +33,7 @@ function App() {
             <Route path="one" element={<HomeOne />} />
             <Route path="two" element={<HomeTwo />} />
           </Route>
-          <Route path="/items" element={<Items data={invoices} />}>
+          <Route path="/items" element={<ItemsLayout data={invoices} />}>
             <Route index element={<ItemsIndex />} />
             <Route path="/items/new" element={<NewItemForm />} />
             <Route path="/items/:id" element={<Item data={invoices}/>} />
