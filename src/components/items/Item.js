@@ -5,9 +5,6 @@ const Item = ({data}) => {
 
   const [invoice, setInvoice] = useState({});
   let params = useParams();
-  let test = data.filter((item) => {
-   return parseInt(item.id) === parseInt(params.id);
-  })[0];
 
   useEffect(() => {
     console.log("rerendering Item");

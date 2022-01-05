@@ -5,7 +5,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import Home from './components/pages/Home';
 import Content from './components/pages/Content';
-import Login from './components/pages/Login';
+// import Login from './components/pages/Login';
 import HomeOne from './components/pages/HomeOne';
 import HomeTwo from './components/pages/HomeTwo';
 
@@ -17,7 +17,7 @@ import NotFound from './components/items/NotFound';
 import ItemsIndex from './components/items/ItemsIndex';
 
 function App() {
-
+  const Login = React.lazy(() => import('./components/pages/Login'));
   const [invoices, setInvoices ] = useState([]);
 
   useEffect(() => {
