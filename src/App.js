@@ -20,6 +20,13 @@ function App() {
   const Login = React.lazy(() => import('./components/pages/Login'));
   const [invoices, setInvoices ] = useState([]);
 
+  // if ('serviceWorker' in navigator) {
+  //   // Use the window load event to keep the page load performant
+  //   window.addEventListener('load', () => {
+  //     navigator.serviceWorker.register('/service-worker.js');
+  //   });
+  // }
+
   useEffect(() => {
     setInvoices(invoiceData);
   },[])
